@@ -13,9 +13,13 @@ export default {
         'border-color': "#E6D9D6",
         'selected-item': "#D7DAEA",
         'tracker-background': "#0A00B8",
-
       },
       fontFamily: {},
+      backgroundImage: {
+        'sidebar-desktop': "url('/bg-sidebar-desktop.svg')",
+        'sidebar-mobile': "url('/bg-sidebar-mobile.svg')",
+      },
+      
     },
   },
   plugins: [],
