@@ -1,10 +1,10 @@
 
-import StepTracker from "../components/StepTracker";
+import { Outlet } from "react-router";
 
 const MultiStep = () => {
     return (
         <div className="bg-background min-h-[100dvh] flex items-center justify-center">
-            <StepTracker />
+            <Outlet />
         </div>
     );
 }

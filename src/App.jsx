@@ -1,12 +1,12 @@
 import {
   createBrowserRouter,
   RouterProvider,
+  Navigate,
 } from "react-router-dom";
 
 //routes
 import MultiStep from "./routes/MultiStep";
-
-//route children
+import StepContainer from "./components/StepContainer";
 
 const App = () => {
 
@@ -14,12 +14,16 @@ const App = () => {
     {
       path: "/",
       element: <MultiStep />,
-      // children: [
-      //   {
-      //     path: "",
-      //     element: < />,
-      //   },
-      // ]
+      children: [
+        {
+          path: "/multi-step",
+          element: <StepContainer />,
+        },
+        {
+          index: true, // Add this to trigger a default action at the root
+          element: <Navigate to="/multi-step" replace />,  // Redirect to /multi-step
+        },
+      ]
     },
   ])
 
