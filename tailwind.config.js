@@ -6,7 +6,14 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        'background': "#140738",
+        'card-background': "#2C185A",
+        'text': "#FCF4F4",
+        'border-color': "#E6D9D6",
+        'selected-item': "#D7DAEA",
+
+      },
       fontFamily: {},
     },
   },
