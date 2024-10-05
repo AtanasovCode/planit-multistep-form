@@ -11,7 +11,7 @@ const StepOne = () => {
     } = useStore();
 
     return (
-        <div className="bg-card-background w-[100%] rounded-xl translate-y-[-15%] pt-8 pb-4 px-6 flex flex-col items-center justify-center text-text z-[99]">
+        <div className="flex flex-col items-center justify-center text-text z-[99]">
             <div className="flex flex-col items-start justify-center mb-6">
                 <div className="font-bold text-2xl mb-2 text-left">
                     Personal Info
