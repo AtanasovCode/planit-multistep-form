@@ -19,6 +19,9 @@ export default {
         'sidebar-desktop': "url('/bg-sidebar-desktop.svg')",
         'sidebar-mobile': "url('/bg-sidebar-mobile.svg')",
       },
+      screens: {
+        'xs': "550px",
+      },
       
     },
   },
