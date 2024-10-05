@@ -1,6 +1,10 @@
 import { create } from 'zustand'
 
 export const useStore = create((set) => ({
+  //route
+  currentRoute: "/multi-step/step-one",
+  changeCurrentRoute: (route) => set({ currentRoute: route }),
+
   //step states
   step: 1,
   changeStep: (number) => set({ step: number }),
