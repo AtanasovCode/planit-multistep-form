@@ -8,11 +8,11 @@ export const useStore = create((set) => ({
   decreaseStep: () => set((state) => ({ step: state.step - 1 })),
 
   //personal info
-  name: null,
+  name: "",
   setName: (name) => set({ name }),
-  mail: null,
+  mail: "",
   setMail: (mail) => set({ mail }),
-  number: null,
+  number: "",
   setNumber: (number) => set({ number }),
 
   //remove all state

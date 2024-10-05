@@ -8,8 +8,8 @@ const InfoInput = ({
     setValue,
 }) => {
     return (
-        <div className="flex flex-col items-start justify-center w-[100%] text-white mb-6">
-            <div className="mb-1 text-sm text-gray-300">
+        <div className="flex flex-col items-start justify-center w-[100%] text-white mb-3">
+            <div className="mb-1 text-xs text-gray-300">
                 {label}
             </div>
             <input
