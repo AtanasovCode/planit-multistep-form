@@ -11,7 +11,7 @@ export default {
         'card-background': "#2C185A",
         'text': "#FCF4F4",
         'border-color': "#E6D9D6",
-        'selected-item': "#D7DAEA",
+        'selected-item': "#FCF4F4",
         'tracker-background': "#0A00B8",
       },
       fontFamily: {},

@@ -9,6 +9,7 @@ const Step = ({
     const changeStep = useStore((state) => state.changeStep);
 
     const backgroundColor = step === number ? "bg-selected-item" : "bg-transparent";
+    const color = step === number ? "text-black" : "text-text";
 
     return (
         <div className="
@@ -17,7 +18,7 @@ const Step = ({
         ">
             <div className={`
                 rounded-full w-10 aspect-square flex items-center justify-center border-2 
-                border-text text-white font-bold ${backgroundColor}
+                border-text font-bold ${backgroundColor} ${color}
                 transition-all duration-300 ease-in-out cursor-pointer
                 lg:mr-4
             `}
