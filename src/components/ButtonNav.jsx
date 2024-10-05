@@ -13,7 +13,8 @@ const ButtonNav = () => {
     return (
         <div className="
             bg-card-background py-3 px-4 flex flex-row-reverse items-center justify-between 
-            fixed bottom-0 left-0 w-[100%]
+            absolute bottom-0 left-0 w-[100%]
+            lg:bg-transparent lg:static lg:bottom-auto lg:left-auto
         ">
             <input
                 type="button"
