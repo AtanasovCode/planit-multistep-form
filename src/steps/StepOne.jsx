@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useStore } from "../../useStore";
 import InfoInput from "../components/InfoInput";
 import { checkName, checkNumber, checkMail } from "../Utils";
+import Heading from "../components/Heading";
 
 
 const StepOne = () => {
@@ -27,17 +28,10 @@ const StepOne = () => {
             flex flex-col items-center justify-center text-text z-[99] 
             lg:w-full
         ">
-            <div className="
-                flex flex-col items-start justify-center mb-6
-                lg:w-full
-            ">
-                <div className="font-bold text-2xl mb-2 text-left lg:text-3xl">
-                    Personal Info
-                </div>
-                <div className="text-left text-gray-300 mr-4">
-                    Please provide your name, email address, and phone number.
-                </div>
-            </div>
+            <Heading 
+                title="Personal Info"
+                subtitle="Please provide your name, email address, and phone number."
+            />
             <div className="flex flex-col items-center justify-center w-full">
                 <InfoInput
                     label="Name"
