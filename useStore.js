@@ -19,6 +19,18 @@ export const useStore = create((set) => ({
   number: "",
   setNumber: (number) => set({ number }),
 
+  //error handling
+  nameErr: false,
+  setNameErr: (value) => set({ nameErr: value }),
+  numberErr: false,
+  setNumberErr: (value) => set({ numberErr: value }),
+  mailErr: false,
+  setMailErr: (value) => set({ mailErr: value }),
+
+  //input validity
+  validInput: false,
+  setValidInput: (value) => set({ validInput: value }),
+
   //pricing
   monthly: {"arcade": "9", "advanced": "12", "pro": "15"},
   yearly: {"arcade": "90", "advanced": "120", "pro": "150"},
