@@ -28,8 +28,8 @@ export const useStore = create((set) => ({
   setMailErr: (value) => set({ mailErr: value }),
 
   //input validity
-  validInput: false,
-  setValidInput: (value) => set({ validInput: value }),
+  isInputValid: false,
+  setIsInputValid: (value) => set({ isInputValid: value }),
 
   //pricing
   monthly: {"arcade": "9", "advanced": "12", "pro": "15"},

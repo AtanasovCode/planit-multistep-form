@@ -13,13 +13,13 @@ const StepOne = () => {
         nameErr,
         numberErr,
         mailErr,
-        setValidInput,
+        setIsInputValid,
     } = useStore();
 
     // Validate inputs
     //checks inputs when user types in input fields
     useEffect(() => {
-        setValidInput(checkName(name) && checkNumber(number) && checkMail(mail));
+        setIsInputValid(checkName(name) && checkNumber(number) && checkMail(mail));
     }, [name, number, mail])
 
     return (

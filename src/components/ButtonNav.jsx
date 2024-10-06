@@ -11,11 +11,10 @@ const ButtonNav = () => {
         name,
         number,
         mail,
-        nameErr, numberErr,
         setNameErr,
         setMailErr,
         setNumberErr,
-        validInput,
+        isInputValid,
     } = useStore();
 
     // Used to check if inputs are correct when users click 'Next Step' before button is enabled
@@ -27,7 +26,7 @@ const ButtonNav = () => {
 
 
     const display = step > 1 ? "inline-block" : "hidden";
-    const activeButton = validInput ? "bg-text text-black cursor-pointer" : "bg-gray-600 text-gray-300 cursor-not-allowed";
+    const activeButton = isInputValid ? "bg-text text-black cursor-pointer" : "bg-gray-600 text-gray-300 cursor-not-allowed";
 
     return (
         <div className="
@@ -39,7 +38,7 @@ const ButtonNav = () => {
                 type="button"
                 value="Next Step"
                 className={`${activeButton} py-2 px-4 rounded-md font-medium text-sm transition-all duration-300`}
-                onClick={() => validInput ? increaseStep() : checkInput()}
+                onClick={() => isInputValid ? increaseStep() : checkInput()}
             />
             <input
                 type="button"
