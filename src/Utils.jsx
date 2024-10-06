@@ -1,45 +1,32 @@
-import { useStore } from "../useStore";
 
-const {
-    name,
-    number,
-    mail,
-    setNameErr,
-    setNumberErr,
-    setMailErr,
-    validInput,
-    setValidInput,
-} = useStore();
-
-// Validate inputs
-const isInputValid = () => {
-    console.log("Checking");
-    let isValid = true;
-
-    // Name validation
+// Name validation
+// If correct returns true, if incorrect returns false
+export const checkName = (name) => {
     if (name.trim() === "") {
-        setNameErr(true);
-        isValid = false;
+        return false;
     } else {
-        setNameErr(false);
+        return true;
     }
+}
 
+// Mail validation
+// If correct returns true, if incorrect returns false
+export const checkMail = (mail) => {
     const mailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!mailPattern.test(mail)) {
-        setMailErr(true);
-        isValid = false;
+        return false;
     } else {
-        setMailErr(false);
+        return true;
     }
+}
 
-    // Number validation (only digits allowed)
+// Number validation (only digits allowed)
+// If correct returns true, if incorrect returns false
+export const checkNumber = (number) => {
     const numberPattern = /^[0-9]+$/;
     if (!numberPattern.test(number)) {
-        setNumberErr(true);
-        isValid = false;
+        return false;
     } else {
-        setNumberErr(false);
+        return true;
     }
-
-    setInputValid(isValid);
 }
