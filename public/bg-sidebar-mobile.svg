@@ -1,10 +1,10 @@
 <svg width="375" height="172" viewBox="0 0 375 172" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="375" height="172" fill="#0D1986"/>
+<rect width="375" height="172" fill="#2300BF"/>
 <mask id="mask0_2042_246" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="375" height="172">
 <rect width="375" height="172" fill="white"/>
 </mask>
 <g mask="url(#mask0_2042_246)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M-80.9251 219.812C-25.3109 350.916 217.322 427.844 280.639 321.572C343.956 215.3 183.745 196.014 127.111 86.1962C70.4757 -23.6216 26.4674 -92.1632 -55.3652 -67.1445C-137.198 -42.1257 -136.539 88.7075 -80.9251 219.812Z" fill="#756EFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M-80.9251 219.812C-25.311 350.916 217.322 427.844 280.639 321.572C343.956 215.3 183.745 196.014 127.111 86.1962C70.4757 -23.6216 26.4674 -92.1632 -55.3652 -67.1445C-137.198 -42.1257 -136.539 88.7075 -80.9251 219.812Z" fill="#756EFF"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M311.62 304.909C400.568 263.458 447.71 94.5169 373.003 53.4688C298.295 12.4208 288.867 123.215 214.602 164.858C140.337 206.501 94.194 238.455 113.391 294.208C132.588 349.961 222.672 346.361 311.62 304.909Z" fill="#FF596B"/>
 <path d="M212.247 111.33L227.795 95.4897" stroke="#FCF4F4" stroke-width="5" stroke-linecap="round" stroke-linejoin="bevel"/>
 <path d="M276.974 119.369L258.643 103.973" stroke="#FCF4F4" stroke-width="5" stroke-linecap="round" stroke-linejoin="bevel"/>
