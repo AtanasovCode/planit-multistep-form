@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { useStore } from "../../useStore";
 import InfoInput from "../components/InfoInput";
+import { checkName, checkNumber, checkMail } from "../Utils";
 
 
 const StepOne = () => {
@@ -8,7 +10,24 @@ const StepOne = () => {
         name, setName,
         mail, setMail,
         number, setNumber,
+        nameErr,
+        numberErr,
+        mailErr,
+        setValidInput,
     } = useStore();
+
+    // Validate inputs
+    const isInputValid = () => {
+        const isValid = checkName(name) && checkNumber(number) && checkMail(mail);
+
+        setValidInput(isValid);
+    }
+
+
+    //checks inputs when user types in input fields
+    useEffect(() => {
+        isInputValid();
+    }, [name, number, mail])
 
     return (
         <div className="
@@ -33,6 +52,8 @@ const StepOne = () => {
                     inputType="text"
                     value={name}
                     setValue={setName}
+                    error={nameErr}
+                    errorMessage="Please enter your name"
                 />
                 <InfoInput
                     label="Email Address"
@@ -40,6 +61,8 @@ const StepOne = () => {
                     inputType="email"
                     value={mail}
                     setValue={setMail}
+                    error={mailErr}
+                    errorMessage="Please input valid e-mail address"
                 />
                 <InfoInput
                     label="Phone Number"
@@ -47,6 +70,8 @@ const StepOne = () => {
                     inputType="text"
                     value={number}
                     setValue={setNumber}
+                    error={numberErr}
+                    errorMessage="Input valid phone number"
                 />
             </div>
         </div>

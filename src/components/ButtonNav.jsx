@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
 import { useStore } from "../../useStore";
+
+import { checkName, checkNumber, checkMail } from "../Utils";
 
 const ButtonNav = () => {
 
@@ -7,11 +8,21 @@ const ButtonNav = () => {
         step,
         increaseStep,
         decreaseStep,
-        name,
-        mail,
-        number,
         inputValid,
+        name,
+        number,
+        mail,
+        setNameErr,
+        setMailErr,
+        setNumberErr,
     } = useStore();
+
+    // Used to check if inputs are correct when users click 'Next Step' before button is enabled
+    const checkInput = () => {
+        setNameErr(!checkName(name));
+        setNumberErr(!checkNumber(number));
+        setMailErr(!checkMail(mail));
+    }
 
 
     const display = step > 1 ? "inline-block" : "hidden";
@@ -27,7 +38,7 @@ const ButtonNav = () => {
                 type="button"
                 value="Next Step"
                 className={`${activeButton} py-2 px-4 rounded-md font-medium text-sm transition-all duration-300`}
-                onClick={() => increaseStep()}
+                onClick={() => inputValid ? increaseStep() : checkInput()}
             />
             <input
                 type="button"
