@@ -23,7 +23,7 @@ const InfoInput = ({
             />
             {
                 error &&
-                <div className="mt-1 text-right w-full text-gray-300 font-sm">
+                <div className="mt-1 text-right w-full text-gray-300 text-xs">
                     {errorMessage}
                 </div>
             }
