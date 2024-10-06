@@ -19,6 +19,12 @@ export const useStore = create((set) => ({
   number: "",
   setNumber: (number) => set({ number }),
 
+  //pricing
+  monthly: {"arcade": "9", "advanced": "12", "pro": "15"},
+  yearly: {"arcade": "90", "advanced": "120", "pro": "150"},
+  selectedModel: "monthly",
+  changeSelectedModel: () => set((state) => ({ selectedModel: state.selectedModel === "monthly" ? "yearly" : "monthly" })),
+
   //remove all state
   removeInfo: () => set({ name: null, mail: null, number: null, step: 1 }),
 }))
