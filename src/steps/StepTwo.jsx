@@ -33,6 +33,7 @@ const StepTwo = () => {
                                 key={plan.name}
                                 name={plan.name}
                                 price={plan.price}
+                                icon={plan.icon}
                             />
                         );
                     })

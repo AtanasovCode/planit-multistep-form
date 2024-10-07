@@ -1,5 +1,10 @@
 import { create } from 'zustand'
 
+//importing icons for each pricing plan
+import arcadeIcon from './src/assets/icon-arcade.svg';
+import proIcon from './src/assets/icon-pro.svg';
+import advancedIcon from './src/assets/icon-advanced.svg';
+
 export const useStore = create((set) => ({
   //route
   currentRoute: "/multi-step/step-one",
@@ -39,14 +44,17 @@ export const useStore = create((set) => ({
         {
           name: "arcade",
           price: "9",
+          icon: arcadeIcon,
         },
         {
           name: "advanced",
-          price: "12"
+          price: "12",
+          icon: advancedIcon,
         },
         {
           name: "pro",
           price: "15",
+          icon: proIcon,
         }
       ],
     },
@@ -56,14 +64,17 @@ export const useStore = create((set) => ({
         {
           name: "arcade",
           price: "90",
+          icon: arcadeIcon,
         },
         {
           name: "advanced",
-          price: "120"
+          price: "120",
+          icon: advancedIcon,
         },
         {
           name: "pro",
           price: "150",
+          icon: proIcon,
         }
       ],
     },
