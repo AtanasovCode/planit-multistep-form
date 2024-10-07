@@ -32,8 +32,42 @@ export const useStore = create((set) => ({
   setIsInputValid: (value) => set({ isInputValid: value }),
 
   //pricing
-  monthly: { "arcade": "9", "advanced": "12", "pro": "15" },
-  yearly: { "arcade": "90", "advanced": "120", "pro": "150" },
+  pricing: [
+    {
+      type: "monthly",
+      plans: [
+        {
+          name: "arcade",
+          price: "9",
+        },
+        {
+          name: "advanced",
+          price: "12"
+        },
+        {
+          name: "pro",
+          price: "15",
+        }
+      ],
+    },
+    {
+      type: "yearly",
+      plans: [
+        {
+          name: "arcade",
+          price: "90",
+        },
+        {
+          name: "advanced",
+          price: "120"
+        },
+        {
+          name: "pro",
+          price: "150",
+        }
+      ],
+    },
+  ],
 
   //pricing model
   selectedModel: "monthly",
@@ -43,7 +77,7 @@ export const useStore = create((set) => ({
   selectedPlan: "arcade",
   changeSelectedPlan: (value) => set({ selectedPlan: value }),
 
-  
+
 
   //remove all values
   removeInfo: () => set({
@@ -52,5 +86,5 @@ export const useStore = create((set) => ({
     number: null,
     step: 1
   }),
-  
+
 }))
