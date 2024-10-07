@@ -1,42 +1,37 @@
-import { useEffect } from "react";
 import { useStore } from "../../useStore";
 
-const ModelSelect = ({
-    name,
-    price,
-    icon,
-}) => {
+const ModelSelect = () => {
 
     const {
-        selectedPlan,
-        changeSelectedPlan,
+        selectedModel,
+        changeSelectedModel,
     } = useStore();
 
-    const background = name === selectedPlan ? "bg-selected-item text-black border-none" : "bg-transparent text-text"
-    const textColor = name === selectedPlan ? "text-black" : "text-gray-300"
+    const position = selectedModel === "monthly" ?
+        "translate-x-0"
+        :
+        " translate-x-[180%]"
 
     return (
-        <div className={`
-            w-full border border-border-color border-solid ${background}
-            flex items-center justify-start p-4 cursor-pointer rounded-lg
-            transition-all duration-300 ease-in-out
-        `}
-        onClick={() => changeSelectedPlan(name)}
+        <div className="
+            w-full flex items-center justify-center text-text mt-12 cursor-pointer
+        "
+        onClick={() => changeSelectedModel()}
         >
-            <div className="mr-4">
-                <img
-                    src={icon}
-                    alt="pricing icon"
-                    className="w-10"
-                />
+            <div>
+                Monthly
             </div>
-            <div className="flex flex-col items-start justify-center">
-                <div className="font-bold text-xl text-left capitalize mb-2">
-                    {name}
+            <div className="w-12 h-6 bg-text flex items-center justify-start px-1 relative mx-2 rounded-xl">
+                <div className={`
+                        w-[35%] aspect-square rounded-full bg-black
+                        transition-all duration-300 ease-in-out
+                        ${position}
+                `}>
+                    {/*Toggle*/}
                 </div>
-                <div className={`${textColor} text-left text-sm`}>
-                    ${price}/mo
-                </div>
+            </div>
+            <div>
+                Yearly
             </div>
         </div>
     );

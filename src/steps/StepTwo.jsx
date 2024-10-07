@@ -1,6 +1,7 @@
 import { useStore } from "../../useStore";
 
 import Heading from "../components/Heading";
+import PlanSelect from "../components/PlanSelect";
 import ModelSelect from "../components/ModelSelect";
 
 
@@ -29,7 +30,7 @@ const StepTwo = () => {
                 {
                     pricingModel?.plans.map((plan) => {
                         return (
-                            <ModelSelect
+                            <PlanSelect
                                 key={plan.name}
                                 name={plan.name}
                                 price={plan.price}
@@ -38,6 +39,7 @@ const StepTwo = () => {
                         );
                     })
                 }
+                <ModelSelect />
             </div>
         </div>
     );
