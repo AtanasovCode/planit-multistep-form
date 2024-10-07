@@ -15,7 +15,7 @@ const StepContainer = () => {
                 xs:w-[90%] sm:w-[85%] md:w-[60%]
                 lg:bg-transparent lg:mt-0 lg:p-0 lg:flex lg:flex-col lg:items-center lg:justify-between
                 lg:w-full lg:h-full lg:pt-10 lg:px-12
-                xl:px-16
+                xl:px-20
             ">
                 <Outlet />
                 <ButtonNav />

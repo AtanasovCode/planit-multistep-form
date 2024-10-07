@@ -15,6 +15,7 @@ const ButtonNav = () => {
         setMailErr,
         setNumberErr,
         isInputValid,
+        selectedPlan,
     } = useStore();
 
     // Used to check if inputs are correct when users click 'Next Step' before button is enabled
@@ -24,9 +25,18 @@ const ButtonNav = () => {
         setMailErr(!checkMail(mail));
     }
 
+    const checkConditions = () => {
+        if(step === 1) {
+            return isInputValid ? true : false;
+        }
+        if(step === 2) {
+            return selectedPlan !== "" ? true : false;
+        }
+    }
+
 
     const display = step > 1 ? "inline-block" : "hidden";
-    const activeButton = isInputValid ? "bg-text text-black cursor-pointer" : "bg-gray-600 text-gray-300 cursor-not-allowed";
+    const activeButton = checkConditions() ? "bg-text text-black cursor-pointer" : "bg-gray-600 text-gray-300 cursor-not-allowed";
 
     return (
         <div className="

@@ -12,7 +12,7 @@ export default {
         'text': "#FCF4F4",
         'border-color': "#E6D9D6",
         'selected-item': "#FCF4F4",
-        'tracker-background': "#0A00B8",
+        'toggle-background': "#142A9A",
       },
       fontFamily: {},
       backgroundImage: {

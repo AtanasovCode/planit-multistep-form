@@ -26,6 +26,7 @@ const StepTwo = () => {
             />
             <div className="
                 grid grid-cols-1 gap-3 justify-items-center w-full mt-4
+                lg:grid-cols-3 lg:gap-6
             ">
                 {
                     pricingModel?.plans.map((plan) => {
@@ -39,8 +40,8 @@ const StepTwo = () => {
                         );
                     })
                 }
-                <ModelSelect />
             </div>
+            <ModelSelect />
         </div>
     );
 }
