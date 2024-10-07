@@ -1,6 +1,6 @@
 
 
-const Headong = ({
+const Heading = ({
     title,
     subtitle,
 }) => {
