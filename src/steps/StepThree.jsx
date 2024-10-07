@@ -4,25 +4,56 @@ import Heading from "../components/Heading";
 import AddOn from "../components/AddOn";
 
 const StepThree = () => {
+
+    const {
+        addons,
+        checkAddon,
+        selectedModel,
+    } = useStore();
+
+    //gets the correct pricing for the addon
+    const getAddonPrice = (id) => {
+        const selectedAddon = addons.find((item) => item.id === id);
+        let price = 0;
+
+        selectedAddon.pricing.map((item) => {
+            if(item.type === selectedModel) {
+                console.log(item.price)
+                price = item.price;
+            }
+        })
+
+        return price;
+    }
+
     return (
         <div className="
         flex flex-col items-center justify-center text-text z-[99] 
         lg:w-full
     ">
-        <Heading 
-            title="Pick add-ons"
-            subtitle="Add-ons help enhance your gaming experience."
-        />
-        <div className="
+            <Heading
+                title="Pick add-ons"
+                subtitle="Add-ons help enhance your gaming experience."
+            />
+            <div className="
             w-full grid grid-cols-1 gap-3
         ">
-            <AddOn 
-                title="Add On Title"
-                subtitle="Select this add on"
-                price="140"
-            />
+                {
+                    addons.map((addon) => {
+                        return (
+                            <AddOn
+                                key={addon.id}
+                                title={addon.name}
+                                subtitle={addon.description}
+                                price={getAddonPrice(addon.id)}
+                                checked={addon.checked}
+                                id={addon.id}
+                            />
+                        );
+                    })
+                }
+            </div>
         </div>
-    </div>
     );
 }
 
