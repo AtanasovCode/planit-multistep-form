@@ -24,7 +24,7 @@ const StepTwo = () => {
                 subtitle="You have the option of monthly or yearly billing."
             />
             <div className="
-                grid grid-cols-1 gap-2 justify-items-center w-full mt-4
+                grid grid-cols-1 gap-3 justify-items-center w-full mt-4
             ">
                 {
                     pricingModel?.plans.map((plan) => {

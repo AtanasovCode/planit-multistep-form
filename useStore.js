@@ -85,7 +85,7 @@ export const useStore = create((set) => ({
   changeSelectedModel: () => set((state) => ({ selectedModel: state.selectedModel === "monthly" ? "yearly" : "monthly" })),
 
   //selected plan
-  selectedPlan: "arcade",
+  selectedPlan: "",
   changeSelectedPlan: (value) => set({ selectedPlan: value }),
 
 
