@@ -30,6 +30,7 @@ const AddOn = ({
                     w-5 aspect-square border border-border-color bg-transparent mr-4 relative
                     transition-all duration-300 ease-in-out cursor-pointer
                     ${checkActiveStyle}
+                    lg:w-4
                 `}
                 onClick={() => checkAddon(id)}
             >
@@ -38,16 +39,16 @@ const AddOn = ({
                 <div className="
                     flex flex-col items-start justify-center
                 ">
-                    <div className="text-md">
+                    <div className="text-md lg:text-lg lg:font-semibold">
                         {title}
                     </div>
-                    <div className="text-xs text-gray-300">
+                    <div className="text-xs text-gray-300 lg:text-sm">
                         {subtitle}
                     </div>
                 </div>
             </div>
-            <div className="text-text text-xs">
-                +{price}${selectedModel === "yearly" ? "/yr" : "/mo"}
+            <div className="text-text text-xs lg:text-sm">
+                + {price}${selectedModel === "yearly" ? "/yr" : "/mo"}
             </div>
         </div>
     );
