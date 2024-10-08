@@ -60,7 +60,7 @@ const StepFour = () => {
             <div className="flex flex-col items-cente justify-center w-full">
                 <div className="flex items-center justify-between w-full">
                     <div className="flex flex-col items-start justify-center relative">
-                        <div className="text-xl font-bold capitalize flex items-center justify-center">
+                        <div className="text-xl font-bold capitalize flex items-center justify-center lg:text-2xl">
                             {selectedPlan} <span className="text-gray-300 ml-2 text-xs capitalize font-normal">({selectedModel})</span>
                         </div>
                         <div className="
@@ -74,7 +74,7 @@ const StepFour = () => {
                         ${getPlanPrice()}
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-center w-full mt-8">
+                <div className="flex flex-col items-center justify-center w-full mt-8 lg:mt-12">
                     {getCheckedAddons().length > 0 ? (
                         getCheckedAddons().map((addon) => {
                             return (
@@ -82,7 +82,7 @@ const StepFour = () => {
                                     key={addon.id}
                                     className="w-full flex items-center justify-between mb-1"
                                 >
-                                    <div className="text-base text-gray-300 font-semibold">
+                                    <div className="text-base text-gray-300 font-semibold lg:text-md">
                                         {addon.name}
                                     </div>
                                     <div className="text-gray-300 text-sm">
@@ -92,7 +92,7 @@ const StepFour = () => {
                             );
                         })
                     ) : (
-                        <div className="text-gray-300 text-md">
+                        <div className="text-gray-300 text-sm text-left w-full">
                             No addons selected.
                         </div>
                     )}
@@ -102,13 +102,13 @@ const StepFour = () => {
             <div className="
                 mt-16 flex items-center justify-between w-full
             ">
-                <div className="font-bold text-xl flex items-center justify-center">
+                <div className="font-bold text-xl flex items-center justify-center lg:text-2xl">
                     Total 
                     <span className="text-gray-300 text-xs ml-2 font-normal">
                         (per {selectedModel === "monthly" ? "month" : "year"})
                     </span>
                 </div>
-                <div className="font-bold text-xl">
+                <div className="font-bold text-xl lg:text-2xl">
                     ${getTotalPrice()}
                 </div>
             </div>
