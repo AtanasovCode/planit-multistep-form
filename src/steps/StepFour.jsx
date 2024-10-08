@@ -50,7 +50,7 @@ const StepFour = () => {
 
     return (
         <div className="
-        flex flex-col items-center justify-center text-text z-[99] 
+        flex flex-col items-center justify-center text-text z-[99] w-full
         lg:w-full
     ">
             <Heading
@@ -60,11 +60,11 @@ const StepFour = () => {
             <div className="flex flex-col items-cente justify-center w-full">
                 <div className="flex items-center justify-between w-full">
                     <div className="flex flex-col items-start justify-center relative">
-                        <div className="text-md font-semibold capitalize flex items-center justify-center">
-                            {selectedPlan} <span className="text-gray-300 ml-2 text-xs capitalize">({selectedModel})</span>
+                        <div className="text-xl font-bold capitalize flex items-center justify-center">
+                            {selectedPlan} <span className="text-gray-300 ml-2 text-xs capitalize font-normal">({selectedModel})</span>
                         </div>
                         <div className="
-                            text-gray-300 text-xs absolute left-0 bottom-[-70%]
+                            text-gray-300 text-xs absolute left-0 bottom-[-60%]
                             before:content-[''] before:absolute before:bottom-[-30%] before:w-full before:h-[.13rem] before:bg-gray-500
                         ">
                             Change
@@ -74,16 +74,19 @@ const StepFour = () => {
                         ${getPlanPrice()}
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-center w-full mt-16">
+                <div className="flex flex-col items-center justify-center w-full mt-8">
                     {getCheckedAddons().length > 0 ? (
                         getCheckedAddons().map((addon) => {
                             return (
-                                <div className="w-full flex items-center justify-between" key={addon.id}>
-                                    <div className="text-md text-gray-300 font-semibold">
+                                <div
+                                    key={addon.id}
+                                    className="w-full flex items-center justify-between mb-1"
+                                >
+                                    <div className="text-base text-gray-300 font-semibold">
                                         {addon.name}
                                     </div>
-                                    <div className="text-gray-300 font-sm">
-                                        ${getAddonPrice(addon.id)}
+                                    <div className="text-gray-300 text-sm">
+                                        +${getAddonPrice(addon.id)}/{selectedModel === "monthly" ? "mo" : "yr"}
                                     </div>
                                 </div>
                             );
@@ -94,6 +97,19 @@ const StepFour = () => {
                         </div>
                     )}
 
+                </div>
+            </div>
+            <div className="
+                mt-16 flex items-center justify-between w-full
+            ">
+                <div className="font-bold text-xl flex items-center justify-center">
+                    Total 
+                    <span className="text-gray-300 text-xs ml-2 font-normal">
+                        (per {selectedModel === "monthly" ? "month" : "year"})
+                    </span>
+                </div>
+                <div className="font-bold text-xl">
+                    ${getTotalPrice()}
                 </div>
             </div>
         </div>
