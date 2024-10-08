@@ -43,17 +43,17 @@ export const useStore = create((set) => ({
       plans: [
         {
           name: "arcade",
-          price: "9",
+          price: 9,
           icon: arcadeIcon,
         },
         {
           name: "advanced",
-          price: "12",
+          price: 12,
           icon: advancedIcon,
         },
         {
           name: "pro",
-          price: "15",
+          price: 15,
           icon: proIcon,
         }
       ],
@@ -63,17 +63,17 @@ export const useStore = create((set) => ({
       plans: [
         {
           name: "arcade",
-          price: "90",
+          price: 90,
           icon: arcadeIcon,
         },
         {
           name: "advanced",
-          price: "120",
+          price: 120,
           icon: advancedIcon,
         },
         {
           name: "pro",
-          price: "150",
+          price: 150,
           icon: proIcon,
         }
       ],
@@ -97,11 +97,11 @@ export const useStore = create((set) => ({
       pricing: [
         {
           type: "yearly",
-          price: "10",
+          price: 10,
         },
         {
           type: "monthly",
-          price: "1",
+          price: 1,
         }
       ]
     },
@@ -113,11 +113,11 @@ export const useStore = create((set) => ({
       pricing: [
         {
           type: "yearly",
-          price: "20",
+          price: 20,
         },
         {
           type: "monthly",
-          price: "2",
+          price: 2,
         }
       ]
     },
@@ -129,11 +129,11 @@ export const useStore = create((set) => ({
       pricing: [
         {
           type: "yearly",
-          price: "20",
+          price: 20,
         },
         {
           type: "monthly",
-          price: "2",
+          price: 2,
         }
       ]
     },
@@ -145,6 +145,9 @@ export const useStore = create((set) => ({
     )
   })),
 
+  //finishing up
+  checkedAddons: [],
+  saveCheckedAddons: (addons) => set({ checkedAddons: addons }),
 
 
   //remove all values

@@ -32,6 +32,9 @@ const ButtonNav = () => {
         if(step === 2) {
             return selectedPlan !== "" ? true : false;
         }
+        if(step === 3) {
+            return true;
+        }
     }
 
 

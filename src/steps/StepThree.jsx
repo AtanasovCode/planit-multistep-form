@@ -18,7 +18,6 @@ const StepThree = () => {
 
         selectedAddon.pricing.map((item) => {
             if(item.type === selectedModel) {
-                console.log(item.price)
                 price = item.price;
             }
         })
