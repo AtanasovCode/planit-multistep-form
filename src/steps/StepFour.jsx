@@ -13,43 +13,40 @@ const StepFour = () => {
         saveCheckedAddons,
     } = useStore();
 
-    //gets all checked addons for displaying
+    const getPlanPrice = () => {
+        const planPrice = pricing.find((item) => item.type === selectedModel)
+            ?.plans.find(plan => plan.name === selectedPlan)?.price || 0;
+
+        return planPrice;
+    }
+
     const getCheckedAddons = () => {
-        const checked = addons.filter((item) => item.checked);
+        const checkedAddons = addons.filter((addon) => addon.checked);
 
-        saveCheckedAddons(checked);
+        return checkedAddons;
     }
 
+    //get price of individual addons based on their id
+    const getAddonPrice = (id) => {
+        const addonPrice = getCheckedAddons().find((item) => item.id === id)
+            ?.pricing.find((item) => item.type === selectedModel)?.price || 0;
+
+        return addonPrice;
+    }
+
+    //calculate the total price (plan + addons)
     const getTotalPrice = () => {
-        let totalAddons = 0;
-        let price = 0;
-
-        addons.map((addon) => {
+        const totalAddons = addons.reduce((total, addon) => {
             if (addon.checked) {
-                addon.pricing.map((i) => {
-                    if (i.type === selectedModel) {
-                        totalAddons += parseInt(i.price);
-                    }
-                })
+                const addonPrice = addon.pricing.find(i => i.type === selectedModel)?.price || 0;
+                return total + parseInt(addonPrice);
             }
-        })
+            return total;
+        }, 0);
 
-        pricing.map((item) => {
-            if (item.type === selectedModel) {
-                item.plans.map((i) => {
-                    if (i.name === selectedPlan) {
-                        price = parseInt(i.price);
-                    }
-                })
-            }
-        })
-
-        return parseInt(price) + parseInt(totalAddons);
+        return parseInt(getPlanPrice()) + totalAddons;
     }
 
-    useEffect(() => {
-        getCheckedAddons
-    }, [])
 
     return (
         <div className="
@@ -60,8 +57,44 @@ const StepFour = () => {
                 title="Finishing up"
                 subtitle="Double-check everything looks OK before confirming."
             />
-            <div className="mt-4 font-bold text-xl text-text">
-                {getTotalPrice()}
+            <div className="flex flex-col items-cente justify-center w-full">
+                <div className="flex items-center justify-between w-full">
+                    <div className="flex flex-col items-start justify-center relative">
+                        <div className="text-md font-semibold capitalize flex items-center justify-center">
+                            {selectedPlan} <span className="text-gray-300 ml-2 text-xs capitalize">({selectedModel})</span>
+                        </div>
+                        <div className="
+                            text-gray-300 text-xs absolute left-0 bottom-[-70%]
+                            before:content-[''] before:absolute before:bottom-[-30%] before:w-full before:h-[.13rem] before:bg-gray-500
+                        ">
+                            Change
+                        </div>
+                    </div>
+                    <div className="text-semibold text-lg">
+                        ${getPlanPrice()}
+                    </div>
+                </div>
+                <div className="flex flex-col items-center justify-center w-full mt-16">
+                    {getCheckedAddons().length > 0 ? (
+                        getCheckedAddons().map((addon) => {
+                            return (
+                                <div className="w-full flex items-center justify-between" key={addon.id}>
+                                    <div className="text-md text-gray-300 font-semibold">
+                                        {addon.name}
+                                    </div>
+                                    <div className="text-gray-300 font-sm">
+                                        ${getAddonPrice(addon.id)}
+                                    </div>
+                                </div>
+                            );
+                        })
+                    ) : (
+                        <div className="text-gray-300 text-md">
+                            No addons selected.
+                        </div>
+                    )}
+
+                </div>
             </div>
         </div>
     );
