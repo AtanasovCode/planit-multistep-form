@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useStore } from "../../useStore";
+import { useNavigate } from "react-router";
 import Heading from "../components/Heading";
 
 const StepFour = () => {
@@ -9,8 +10,7 @@ const StepFour = () => {
         selectedModel,
         addons,
         pricing,
-        checkedAddons,
-        saveCheckedAddons,
+        changeStep,
     } = useStore();
 
     const getPlanPrice = () => {
@@ -64,9 +64,11 @@ const StepFour = () => {
                             {selectedPlan} <span className="text-gray-300 ml-2 text-xs capitalize font-normal">({selectedModel})</span>
                         </div>
                         <div className="
-                            text-gray-300 text-xs absolute left-0 bottom-[-60%]
+                            text-gray-300 text-xs absolute left-0 bottom-[-60%] cursor-pointer
                             before:content-[''] before:absolute before:bottom-[-30%] before:w-full before:h-[.13rem] before:bg-gray-500
-                        ">
+                        "
+                        onClick={() => changeStep(2)}
+                        >
                             Change
                         </div>
                     </div>

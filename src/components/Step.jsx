@@ -36,7 +36,7 @@ const Step = ({
             lg:mx-0 lg:mb-8
         ">
             <div className={`
-                rounded-full w-8 aspect-square text-xs flex items-center justify-center border-2 
+                rounded-full w-10 lg:w-8 aspect-square text-sm lg:text-xs flex items-center justify-center border-2 
                 border-text font-bold ${backgroundColor} ${color}
                 transition-all duration-300 ease-in-out cursor-pointer
                 lg:mr-4
