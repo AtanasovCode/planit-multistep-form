@@ -14,7 +14,9 @@ export default {
         'selected-item': "#FCF4F4",
         'toggle-background': "#142A9A",
       },
-      fontFamily: {},
+      fontFamily: {
+        'sans': "Ubuntu",
+      },
       backgroundImage: {
         'sidebar-desktop': "url('/bg-sidebar-desktop.svg')",
         'sidebar-mobile': "url('/bg-sidebar-mobile.svg')",
