@@ -1,6 +1,12 @@
+import { useState } from 'react';
+import ConfettiExplosion from 'react-confetti-explosion';
+
 import checkmarkIcon from '../assets/icon-thank-you.svg';
 
 const Finish = () => {
+
+    const [explode, setExplode] = useState(true);
+
     return (
         <div className="bg-background min-h-[100vh] flex items-start justify-center text-text lg:items-center">
             <div className="
@@ -20,6 +26,16 @@ const Finish = () => {
                     lg:mt-0 lg:w-[66%] lg:bg-transparent lg:z-[1] lg:mx-16      
                 ">
                     <div className="flex flex-col items-center justify-center">
+                        {
+                            explode &&
+                            <ConfettiExplosion
+                                particleCount={400}
+                                particleSize={16}
+                                duration={3600}
+                                zIndex={99999}
+                                onComplete={() => setExplode(false)}
+                            />
+                        }
                         <div className="flex items-center justify-center">
                             <img
                                 src={checkmarkIcon}
