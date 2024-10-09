@@ -2,22 +2,29 @@ import checkmarkIcon from '../assets/icon-thank-you.svg';
 
 const Finish = () => {
     return (
-        <div className="bg-background flex items-center justify-center text-text">
-            <div className="flex flex-col items-center justify-start">
+        <div className="bg-background min-h-[100vh] flex items-start justify-center text-text lg:items-center">
+            <div className="
+                flex flex-col items-center justify-start
+                lg:p-4 lg:rounded-xl lg:bg-card-background lg:flex-row lg:justify-center
+                lg:w-[75vw] lg:h-[75vh] xl:w-[65vw] xl:h-[73vh] xl:max-w-[58rem]
+            ">
+
                 <div className="
-                    w-[100vw] h-[25dvh] bg-sidebar-mobile bg-containt bg-center bg-no-repeat lg:bg-sidebar-desktop
+                    w-[100vw] h-[25dvh] bg-sidebar-mobile bg-cover bg-center bg-no-repeat lg:bg-sidebar-desktop
                     lg:w-[33%] lg:h-[100%]
                 ">{/* Background Image */}</div>
+
                 <div className="
                     flex flex-col items-center justify-center z-[99] py-12 px-6 rounded-xl
-                    w-[95%] mt-[-60px] xs:w-[90%] sm:w-[85%] md:w-[70%] bg-card-background              
+                    w-[95%] mt-[-60px] xs:w-[90%] sm:w-[85%] md:w-[70%] bg-card-background
+                    lg:mt-0 lg:w-[66%] lg:bg-transparent lg:z-[1] lg:mx-16      
                 ">
                     <div className="flex flex-col items-center justify-center">
                         <div className="flex items-center justify-center">
                             <img
                                 src={checkmarkIcon}
                                 alt="checkmark illustration"
-                                className="w-10"
+                                className="w-10 lg:w-12 xl:w-16"
                             />
                         </div>
                         <div className="font-bold text-3xl my-6">
