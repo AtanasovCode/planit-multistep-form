@@ -17,11 +17,11 @@ export const useStore = create((set) => ({
   decreaseStep: () => set((state) => ({ step: state.step - 1 })),
 
   //personal info
-  name: "John Doe",
+  name: "",
   setName: (name) => set({ name }),
-  mail: "doe@mail.com",
+  mail: "",
   setMail: (mail) => set({ mail }),
-  number: "124556",
+  number: "",
   setNumber: (number) => set({ number }),
 
   //error handling

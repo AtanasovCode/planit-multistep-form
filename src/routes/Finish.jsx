@@ -40,7 +40,7 @@ const Finish = () => {
                             <img
                                 src={checkmarkIcon}
                                 alt="checkmark illustration"
-                                className="w-10 lg:w-12 xl:w-16"
+                                className="w-12 lg:w-16 xl:w-20"
                             />
                         </div>
                         <div className="font-bold text-3xl my-6">
