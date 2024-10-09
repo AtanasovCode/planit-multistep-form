@@ -35,6 +35,9 @@ const ButtonNav = () => {
         if(step === 3) {
             return true;
         }
+        if(step === 4) {
+            return true;
+        }
     }
 
 
@@ -49,7 +52,7 @@ const ButtonNav = () => {
         ">
             <input
                 type="button"
-                value="Next Step"
+                value={step !== 4 ? "Next Step" : "Confirm"}
                 className={`${activeButton} py-2 px-4 rounded-md font-medium text-sm transition-all duration-300`}
                 onClick={() => isInputValid ? increaseStep() : checkInput()}
             />

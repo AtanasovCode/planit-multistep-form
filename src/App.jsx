@@ -3,10 +3,12 @@ import {
   RouterProvider,
   Navigate, useNavigate,
 } from "react-router-dom";
-import { useStore } from "../useStore";
 
 //routes
 import MultiStep from "./routes/MultiStep";
+import Finish from "./routes/Finish";
+
+//children
 import StepContainer from "./components/StepContainer";
 
 //steps
@@ -50,6 +52,10 @@ const App = () => {
           element: <Navigate to="/multi-step/step-one" replace />,  // Redirect to /multi-step
         },
       ],
+    },
+    {
+      path: "/finish",
+      element: <Finish />,
     },
   ])
 
