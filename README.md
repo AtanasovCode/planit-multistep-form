@@ -21,10 +21,10 @@ making sure everything is correct before submitting.
 
 ### Built With
 
-[React.js](https://react.dev/)
-[React Router](https://reactrouter.com/en/main) - for routing
-[TailwindCSS](https://tailwindcss.com/) - for styling
-[react-confetti-explosion](https://www.npmjs.com/package/react-confetti-explosion) - for a fun little surprise
+- [React.js](https://react.dev/)
+- [React Router](https://reactrouter.com/en/main) - for routing
+- [TailwindCSS](https://tailwindcss.com/) - for styling
+- [react-confetti-explosion](https://www.npmjs.com/package/react-confetti-explosion) - for a fun little surprise
 
 ### Challenge By
 
