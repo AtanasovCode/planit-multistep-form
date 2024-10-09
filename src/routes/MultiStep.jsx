@@ -26,6 +26,9 @@ const MultiStep = () => {
             case 4:
                 changeCurrentRoute("/multi-step/step-four");
                 break;
+            case 5: 
+                changeCurrentRoute("/finish");
+                break;
             default:
                 return "/multi-step/step-one"; // Fallback in case step is undefined or invalid
                 break;
