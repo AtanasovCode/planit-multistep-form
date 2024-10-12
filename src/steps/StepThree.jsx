@@ -17,7 +17,7 @@ const StepThree = () => {
         let price = 0;
 
         selectedAddon.pricing.map((item) => {
-            if(item.type === selectedModel) {
+            if (item.type === selectedModel) {
                 price = item.price;
             }
         })
@@ -27,9 +27,10 @@ const StepThree = () => {
 
     return (
         <div className="
-        flex flex-col items-center justify-center text-text z-[99] 
-        lg:w-full
-    ">
+            flex flex-col items-center justify-center text-text z-[99] mb-6 lg:mb-0
+            bg-card-background lg:bg-transparent  pt-8 pb-4 px-6 lg:p-0
+            sm:w-full
+        ">
             <Heading
                 title="Pick add-ons"
                 subtitle="Add-ons help enhance your gaming experience."

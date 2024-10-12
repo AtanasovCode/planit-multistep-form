@@ -50,9 +50,10 @@ const StepFour = () => {
 
     return (
         <div className="
-        flex flex-col items-center justify-center text-text z-[99] w-full
-        lg:w-full
-    ">
+            flex flex-col items-center justify-center text-text z-[99] mb-6 lg:mb-0
+            bg-card-background lg:bg-transparent  pt-8 pb-4 px-6 lg:p-0
+            sm:w-full
+        ">
             <Heading
                 title="Finishing up"
                 subtitle="Double-check everything looks OK before confirming."
@@ -67,7 +68,7 @@ const StepFour = () => {
                             text-gray-300 text-xs absolute left-0 bottom-[-60%] cursor-pointer
                             before:content-[''] before:absolute before:bottom-[-30%] before:w-full before:h-[.13rem] before:bg-gray-500
                         "
-                        onClick={() => changeStep(2)}
+                            onClick={() => changeStep(2)}
                         >
                             Change
                         </div>
@@ -105,7 +106,7 @@ const StepFour = () => {
                 mt-16 flex items-center justify-between w-full
             ">
                 <div className="font-bold text-xl flex items-center justify-center lg:text-2xl">
-                    Total 
+                    Total
                     <span className="text-gray-300 text-xs ml-2 font-normal">
                         (per {selectedModel === "monthly" ? "month" : "year"})
                     </span>
